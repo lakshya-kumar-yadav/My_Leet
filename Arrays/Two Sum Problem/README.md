@@ -1,46 +1,95 @@
-You are given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+# Two Sum
 
-You may assume that each input would have exactly one solution, and you may not use the same element twice.
+**LeetCode Problem:** [Two Sum](https://leetcode.com/problems/two-sum/)  
+**Difficulty:** Easy  
+**Topics:** Array, HashMap
 
-You can return the answer in any order.
+## Problem Description
 
- 
+Given an array of integers `nums` and an integer `target`, return the indices of the two numbers such that they add up to `target`.
 
-Example 1:
+- Each input has exactly one solution.
+- You cannot use the same element twice.
+- You can return the answer in any order.
 
-Input: nums = [2,7,11,15], target = 9
+## Examples
 
-Output: [0,1]
+### Example 1
 
-Explanation:
+**Input:**
+```text
+nums = [2, 7, 11, 15], target = 9
+```
 
-The sum of nums[0] and nums[1] is 2 + 7 = 9, which equals the target. Therefore, the indices [0, 1] are returned.
+**Output:**
+```text
+[0, 1]
+```
 
-Example 2:
+**Explanation:** `nums[0] + nums[1] = 2 + 7 = 9`.
 
-Input: nums = [3,2,4], target = 6
+### Example 2
 
-Output: [1,2]
+**Input:**
+```text
+nums = [3, 2, 4], target = 6
+```
 
-Explanation:
+**Output:**
+```text
+[1, 2]
+```
 
-The sum of nums[1] and nums[2] is 2 + 4 = 6, which equals the target. Therefore, the indices [1, 2] are returned.
+**Explanation:** `nums[1] + nums[2] = 2 + 4 = 6`.
 
-Example 3:
+### Example 3
 
-Input: nums = [3,3], target = 6
+**Input:**
+```text
+nums = [3, 3], target = 6
+```
 
-Output: [0,1]
+**Output:**
+```text
+[0, 1]
+```
 
-Explanation:
+**Explanation:** `nums[0] + nums[1] = 3 + 3 = 6`.
 
-The sum of nums[0] and nums[1] is 3 + 3 = 6, which equals the target. Therefore, the indices [0, 1] are returned.
+## Constraints
 
- 
+- `2 <= nums.length <= 10⁴`
+- `-10⁹ <= nums[i] <= 10⁹`
+- `-10⁹ <= target <= 10⁹`
+- Only one valid answer exists.
 
-Constraints:
+## Approach: HashMap
 
-2 <= nums.length <= 104
--109 <= nums[i] <= 109
--109 <= target <= 109
-Only one valid answer exists.
+Use a HashMap to store previously visited numbers and their corresponding indices.
+
+1. Initialize an empty HashMap.
+2. Iterate through the array.
+3. Calculate the complement: `target - nums[i]`.
+4. Check whether the complement exists in the HashMap.
+5. If found, return the stored index and the current index.
+6. Otherwise, store the current number and its index in the HashMap.
+
+This approach avoids checking every possible pair and provides an efficient solution.
+
+## Complexity Analysis
+
+| Complexity | Value | Explanation |
+|---|---|---|
+| Time | O(n) | Single traversal of the array |
+| Space | O(n) | HashMap stores up to n elements |
+
+## Solution
+
+**Language:** Java  
+**Data Structure:** HashMap
+
+See the Java implementation in `Solution.java`.
+
+---
+
+*Part of my LeetCode problem-solving journey — focusing on data structures, algorithms, and writing efficient solutions.*
