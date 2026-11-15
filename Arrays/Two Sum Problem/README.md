@@ -88,7 +88,7 @@ This approach avoids checking every possible pair and provides an efficient solu
 **Language:** Java  
 **Data Structure:** HashMap
 
-See the Java implementation in `Solution.java`.
+See the Java implementation in `TwoSum.java`.
 
 ---
 
